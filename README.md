@@ -1,6 +1,5 @@
 # Musical Time Machine Project
 
-
 ### Creating a Spotify Playlist using the Musical Time Machine
 
 ## The Goal
