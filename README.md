@@ -1,5 +1,6 @@
 # Musical Time Machine Project
 
+
 ### Creating a Spotify Playlist using the Musical Time Machine
 
 ## The Goal
@@ -41,6 +42,7 @@
     song_names_spans = soup.find_all("span", class_="chart-element__information__song")
     song_names = [song.getText() for song in song_names_spans]
 
+
 > Take a look at the URL of the chart on a historical date:
 > https://www.billboard.com/charts/hot-100/2000-08-12
 
@@ -54,8 +56,10 @@ https://developer.spotify.com/dashboard/
 
 Once you've created a Spotify app, copy the Client ID and Client Secret into your Python project.
 ![](assets/Inkedimg_1_LI.jpg)
+
 Spotify uses OAuth to allow third-party applications (e.g. my Python code) to access a Spotify user's account without
 giving them the username or password.
+
 > read more about it here: https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth
 
 Using the [Spotipy documentation](https://spotipy.readthedocs.io/en/2.19.0/) , I can authenticate my Python project with
@@ -139,3 +143,4 @@ We need this [method](https://spotipy.readthedocs.io/en/2.13.0/#spotipy.client.S
     sp.playlist_add_items(playlist_id=playlist["id"], items=song_uris)
 
 # ENJOY! :)
+
