@@ -1,11 +1,22 @@
 from bs4 import BeautifulSoup
 import requests
 import spotipy
+from datetime import datetime
 from spotipy.oauth2 import SpotifyOAuth
 
 if __name__ == '__main__':
+    # date input validation
+    format = "%Y-%m-%d"
+    date_is_incorrect = True
+    while date_is_incorrect:
+        date = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
+        try:
+            datetime.strptime(date,format)
+            date_is_incorrect = False
+        except ValueError:
+            print("This is the incorrect date string format. It should be YYYY-MM-DD")
+
     # Scraping Billboard 100
-    date = input("Which year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
     # specify the url
     response = requests.get("https://www.billboard.com/charts/hot-100/" + date)
     # parse the html using beautiful soup and store in variable `soup`
